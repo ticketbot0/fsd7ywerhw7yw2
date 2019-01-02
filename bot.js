@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = "Your Prefix <3";
+const prefix = "t+";
 
 
 
