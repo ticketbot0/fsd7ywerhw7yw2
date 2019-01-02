@@ -121,8 +121,8 @@ client.on("message", (message) => {
 
 
 
-var prefix = "+";
-var adminprefix = '+'
+var prefix = "t+";
+var adminprefix = 't+'
 const developers = ["307938325799501824"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
