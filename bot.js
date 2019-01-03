@@ -33,7 +33,7 @@ client.on("message", (message) => {
       const embed = new Discord.RichEmbed()
       .setTitle(`:mailbox_with_mail: Help`)
       .setColor(0xCF40FA)
-      .setDescription(`مرحباٌ! I'm ${client.user.username}, هذا البوت خاص للتذاكر لمساعره فريق العمل و هذه هي الاوامر:`)
+      .setDescription(`مرحباٌ! I'm ${client.user.username}, هذا البوت خاص للتذاكر لمساعدة فريق العمل و هذه هي الاوامر:`)
       .addField(`Tickets`, `[${prefix}new]() > لفتح تذكره جديده و منشنه اعضاء دعم السرفر \n[${prefix}close]() > لغلق التذكره التي تم فتحها من قبل الدعم`)
       .addField(`Other`, `[${prefix}help]() > لرؤيه قائمه الاوامر \n[${prefix}ping]() > لمعرفه البينق الخاص للبوت \n[${prefix}about]() > لمعرفه كل شي عن البوت`)
       message.channel.send({ embed: embed });
@@ -47,7 +47,7 @@ client.on("message", (message) => {
   
   if (message.content.toLowerCase().startsWith(prefix + `new`)) {
       const reason = message.content.split(" ").slice(1).join(" ");
-      if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`هذا السيرفر ليس لديه \`Support Team\` صنع رتبة, لذلك لن يتم فتح التذكرة.\nاذا كنت تمتلك administrator, إنشاء اسم بهذا الاسم بالضبط وإعطائه للمستخدمين الذين يمكنهم مشاهدة التذاكر.`);
+      if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`(Support Team)اذا كنت ادمن يرجى توفر رتبة`);
       if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`انت بالفعل لديك تذكره مفتوحه.`);
       message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
           let role = message.guild.roles.find("name", "Support Team");
